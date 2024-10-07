@@ -2,6 +2,10 @@ name: Build Docker images
 
 on:
   workflow_dispatch:
+  
+env:
+  REGISTRY: docker.io
+  IMAGE_NAME: phililab/udagram
 
 jobs:
   build_udagram_frontend:
