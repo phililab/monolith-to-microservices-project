@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-feed
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: udagram
+  template:
+    metadata:
+      labels:
+        app: udagram
+    spec:
+      containers:
+        - name: backend-feed
+          image: phililab/udagram-api-feed:latest
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: env-configmap
+            - secretRef:
+                name: env-secret
+            - secretRef:
+                name: aws-secret
