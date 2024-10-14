@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: reverseproxy
-          image: phililab/reverseproxy:latest
+          image: phililab/reverseproxy@sha256:e2fe99b5575b46397542d6186c197fe8d72ccdbce4de31b7bf170273a65124e1
           ports:
             - containerPort: 8080
           envFrom:

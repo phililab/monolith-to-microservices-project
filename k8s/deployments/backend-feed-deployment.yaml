@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend-feed
-          image: phililab/udagram-api-feed:latest
+          image: phililab/udagram-api-feed@sha256:06ff0ea75ea08c303a49838bfd9137941f26789fbf82f7c26d734e3ec3796719
           ports:
             - containerPort: 8080
           envFrom:
