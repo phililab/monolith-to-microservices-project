@@ -7,10 +7,12 @@ spec:
   selector:
     matchLabels:
       app: udagram
+      name: reverseproxy
   template:
     metadata:
       labels:
         app: udagram
+        name: reverseproxy
     spec:
       containers:
         - name: reverseproxy

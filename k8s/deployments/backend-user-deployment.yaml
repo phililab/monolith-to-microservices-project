@@ -7,10 +7,12 @@ spec:
   selector:
     matchLabels:
       app: udagram
+      name: backend-user
   template:
     metadata:
       labels:
         app: udagram
+        name: backend-user
     spec:
       containers:
         - name: backend-user
