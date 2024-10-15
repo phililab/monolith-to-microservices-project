@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    service: reverseproxy
   name: reverseproxy
 spec:
   replicas: 1
@@ -8,15 +10,24 @@ spec:
     matchLabels:
       app: udagram
       name: reverseproxy
+      service: reverseproxy
   template:
     metadata:
       labels:
         app: udagram
         name: reverseproxy
+        service: reverseproxy
     spec:
       containers:
         - name: reverseproxy
           image: phililab/reverseproxy@sha256:e2fe99b5575b46397542d6186c197fe8d72ccdbce4de31b7bf170273a65124e1
+          resources:
+            requests:
+              memory: "500Mi"
+              cpu: "250m"
+            limits:
+              memory: "1000Mi"
+              cpu: "500m"
           ports:
             - containerPort: 8080
           envFrom:

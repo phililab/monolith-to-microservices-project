@@ -1,22 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    service: backend-user
   name: backend-user
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: udagram
+      service: backend-user
       name: backend-user
   template:
     metadata:
       labels:
         app: udagram
+        service: backend-user
         name: backend-user
     spec:
       containers:
         - name: backend-user
           image: phililab/udagram-api-user@sha256:91ce3bf95399f0c0fcff377af84bd600e56e083a347109116990a1fb734db154
+          resources:
+            requests:
+              memory: "500Mi"
+              cpu: "250m"
+            limits:
+              memory: "1000Mi"
+              cpu: "500m"
           ports:
             - containerPort: 8080
           envFrom:

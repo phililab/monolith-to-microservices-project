@@ -1,22 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    service: backend-feed
   name: backend-feed
 spec:
   replicas: 1
   selector:
     matchLabels:
+      service: backend-feed
       app: udagram
       name: backend-feed
   template:
     metadata:
       labels:
         app: udagram
+        service: backend-feed
         name: backend-feed
     spec:
       containers:
         - name: backend-feed
           image: phililab/udagram-api-feed@sha256:06ff0ea75ea08c303a49838bfd9137941f26789fbf82f7c26d734e3ec3796719
+          resources:
+            requests:
+              memory: "500Mi"
+              cpu: "250m"
+            limits:
+              memory: "1000Mi"
+              cpu: "500m"
           ports:
             - containerPort: 8080
           envFrom:
