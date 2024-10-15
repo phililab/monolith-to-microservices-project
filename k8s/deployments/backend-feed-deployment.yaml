@@ -20,13 +20,13 @@ spec:
     spec:
       containers:
         - name: backend-feed
-          image: phililab/udagram-api-feed@sha256:06ff0ea75ea08c303a49838bfd9137941f26789fbf82f7c26d734e3ec3796719
+          image: phililab/udagram-api-feed@sha256:667e2dbb360eaca116fa9f48076747f406eb23f65e1efea58120c6d52339890f
           resources:
             requests:
-              memory: "500Mi"
+              memory: "2000Mi"
               cpu: "250m"
             limits:
-              memory: "1000Mi"
+              memory: "2000Mi"
               cpu: "500m"
           ports:
             - containerPort: 8080

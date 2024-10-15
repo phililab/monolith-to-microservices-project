@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: reverseproxy
-          image: phililab/reverseproxy@sha256:e2fe99b5575b46397542d6186c197fe8d72ccdbce4de31b7bf170273a65124e1
+          image: phililab/reverseproxy@sha256:c094151737503336f4fc805165a3e85c4a16be0ccdd491be59fb3b9b47602546
           resources:
             requests:
               memory: "500Mi"
