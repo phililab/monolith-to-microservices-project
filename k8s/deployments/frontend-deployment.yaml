@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: phililab/udagram-frontend@sha256:4f30e6e9716c3268584ea6f45780c54e3d3e3a537bc610c8e24a54ffd58a9c9f
+          image: phililab/udagram-frontend@sha256:ec463496d5d12c42193503553e1d3a80776b709fe095e3fa1a22c95caa3e9837
           ports:
             - containerPort: 80
           resources:
